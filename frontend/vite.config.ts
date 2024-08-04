@@ -9,7 +9,9 @@ export default defineConfig({
     emptyOutDir: true,
     outDir: '../public'
   },
-  alias: {
-    "@": path.resolve(__dirname, "./frontend/src"),
-  },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  }
 })
