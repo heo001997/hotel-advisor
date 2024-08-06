@@ -7,3 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+Accommodation.create(room_type: :single, sleeps: 1, room_count: 2, price: 30)
+Accommodation.create(room_type: :double, sleeps: 2, room_count: 3, price: 50)
+Accommodation.create(room_type: :family, sleeps: 4, room_count: 1, price: 85)
