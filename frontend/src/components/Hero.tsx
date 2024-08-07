@@ -4,7 +4,7 @@ import {Table, TableHeader, TableRow, TableCell, TableHead, TableBody} from "@/s
 import {useEffect, useState} from "react";
 
 interface Accommodation {
-  room_type: number;
+  room_type: string;
   sleeps: number;
   room_count: number;
   price: number;
@@ -32,7 +32,7 @@ export const Hero = () => {
   const displayAccommodations = accommodations[0] && accommodations.map((accommodation, idx) => {
     return <TableRow className={idx % 2 === 0 ? "bg-accent" : ""}>
       <TableCell>
-        <div className="font-medium">{accommodation.room_type}</div>
+        <div className="font-medium">{capitalizeFirstLetter(accommodation.room_type)}</div>
       </TableCell>
       <TableCell className="hidden sm:table-cell">
         {displayAccommodationSleep(accommodation.sleeps)}
@@ -44,9 +44,13 @@ export const Hero = () => {
     </TableRow>
   })
 
-  function displayAccommodationSleep(sleeps){
+  function displayAccommodationSleep(sleeps: number){
     let displaySleeps = `${sleeps} guest`
     return sleeps > 1 ? displaySleeps + "s" : displaySleeps
+  }
+
+  function capitalizeFirstLetter(string: string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
   return (

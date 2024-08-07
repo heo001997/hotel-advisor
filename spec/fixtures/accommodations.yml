@@ -1,0 +1,15 @@
+single_room:
+  room_type: :single
+  sleeps: 1
+  room_count: 2
+  price: 30
+double_room:
+  room_type: :double
+  sleeps: 2
+  room_count: 3
+  price: 50
+family_room:
+  room_type: :family
+  sleeps: 4
+  room_count: 1
+  price: 85
